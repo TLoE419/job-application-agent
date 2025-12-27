@@ -1,0 +1,103 @@
+personal_info:
+  name: "Chun-Yu Wu"
+  email: "chunyuw7@uci.edu"
+  phone: "(949) 300-8786"
+  location: "Irvine, CA 92604"
+  linkedin: "linkedin.com/in/chun-yuwu/"
+  github: "github.com/TLoE02"
+
+education:
+  - degree: "Master of Software Engineering"
+    institution: "University of California, Irvine"
+    location: "Irvine, California"
+    start_date: "Sep. 2025"
+    end_date: "Dec. 2026"
+
+  - degree: "B.S. in Computer Science"
+    institution: "Feng Chia University"
+    location: "Taichung, Taiwan"
+    start_date: "Aug. 2020"
+    end_date: "Jun. 2024"
+    courses:
+      - "Algorithms"
+      - "Data Structures"
+      - "Unix Applications and Practices"
+      - "System Programming"
+      - "Compiler"
+      - "Operating Systems"
+      - "Computer Architecture"
+
+skills:
+  languages:
+    - "C/C++"
+    - "Python"
+    - "Java"
+    - "TypeScript"
+    - "HTML"
+    - "CSS"
+    - "JavaScript"
+    - "SQL"
+
+  frameworks_and_tools:
+    - "Django"
+    - "Flask"
+    - "Git"
+    - "Next.js"
+    - "React"
+    - "Supabase"
+    - "React-admin"
+
+experience:
+  - title: "Data Analytics Intern (Remote)"
+    company: "PETADIRI Leadership & Coaching"
+    location: "Kuala Lumpur, Malaysia"
+    start_date: "Jun. 2025"
+    end_date: "Jul. 2025"
+    achievements:
+      - "Assisted in website optimization by migrating all outdated Wix forms to the new Forms builder, launching Google Tag integration to enable accurate conversion tracking"
+      - "Improved Google Ads campaign performance by refining keyword match types and adding high-intent keywords, which resulted in a 76% increase in CTR and reduced irrelevant clicks"
+      - "Prepared a comprehensive 18-month growth strategy, drafted client proposals with presentations"
+
+projects:
+  - name: "Anesthesia Patient Educator"
+    date: "Oct. 24-25, 2025"
+    type: "Hackathon"
+    technologies:
+      - "Python"
+      - "RAG (Retrieval-Augmented Generation)"
+      - "Vector Databases"
+      - "gTTS"
+      - "Video.js"
+    description:
+      - "Designed and implemented RAG (Retrieval-Augmented Generation) Q&A system integrating vector databases, providing privacy-preserving local medical chatbot with automatic categorization"
+      - "Built video audio translation and dubbing pipeline using gTTS library for 7-language voice generation and implemented Video.js player with millisecond-precision audio-video synchronization, supporting real-time language switching"
+
+  - name: "Eyewear Website"
+    date: "Apr. 2025 - Oct. 2025"
+    type: "Individual Developer"
+    technologies:
+      - "TypeScript"
+      - "Next.js"
+      - "React-admin"
+      - "Supabase"
+    description:
+      - "Implemented major features including product showcasing, shopping cart functionality, interactive filtering, and optimized layouts for various devices"
+      - "Built admin management system using Next.js, React-admin, and Supabase, enabling efficient product inventory management"
+      - "Designed real-time data synchronization, and streamlined operations through a clear, responsive interface"
+
+  - name: "Tracker System"
+    date: "May 2023 - Dec. 2023"
+    type: "Graduation Project"
+    technologies:
+      - "Python"
+      - "CodeFormer"
+      - "FaceNet"
+      - "Flask"
+      - "HTML"
+      - "CSS"
+      - "JavaScript"
+      - "Folium"
+    description:
+      - "Developed a CCTV-based tracking system that combines CodeFormer-based super-resolution with FaceNet facial recognition, enhancing image clarity and identity matching accuracy for low-resolution footage"
+      - "Responsible for model integration, system functionality, and intuitive Flask web interface design using HTML, CSS, and JavaScript"
+      - "Implemented real-time video analysis, database overview, and map visualization (Folium) to display suspect locations, deepening understanding of computer vision"

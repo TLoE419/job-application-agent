@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+
+# Environment variables
+config/.env
+
+# IDE
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Output files
+outputs/*.yaml
+outputs/*.pdf
+
+# Keep the outputs directory
+!outputs/.gitkeep
+
+# Logs
+*.log
