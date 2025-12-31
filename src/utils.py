@@ -218,7 +218,7 @@ class JobPostingMocker:
 # Example usage
 if __name__ == "__main__":
     # Test CV parsing
-    cv = CVParser.load_cv("base_cv.yaml")
+    cv = CVParser.load_cv("inputs/base_cv.yaml")
     print("✓ CV loaded successfully")
     print(f"  Name: {cv['personal_info']['name']}")
     

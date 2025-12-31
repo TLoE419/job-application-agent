@@ -11,8 +11,8 @@ from pathlib import Path
 
 class JobCVCrew:
     """Orchestrates the entire job CV customization workflow"""
-    
-    def __init__(self, cv_path: str = "base_cv.yaml"):
+
+    def __init__(self, cv_path: str = "inputs/base_cv.yaml"):
         """
         Initialize the crew with a base CV
         
@@ -141,7 +141,7 @@ class JobCVCrew:
 # Example usage
 if __name__ == "__main__":
     # Initialize the crew
-    crew = JobCVCrew(cv_path="base_cv.yaml")
+    crew = JobCVCrew(cv_path="inputs/base_cv.yaml")
     
     # Example job posting (in real usage, this would be scraped from LinkedIn)
     example_job_posting = """

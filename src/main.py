@@ -31,9 +31,10 @@ def main():
     # Setup
     setup_environment()
     
-    # Initialize the crew with base CV
-    print("1. Initializing Crew with base CV...")
-    crew = JobCVCrew(cv_path="base_cv.yaml")
+    # Initialize the crew with base CV and template
+    print("1. Initializing Crew with base CV and template...")
+    crew = JobCVCrew(cv_path="inputs/base_cv.yaml")
+    
     
     # Get a sample job posting
     print("\n2. Loading sample job posting...")
@@ -71,7 +72,7 @@ def main():
         print("\nTroubleshooting tips:")
         print("1. Verify ANTHROPIC_API_KEY is set in .env")
         print("2. Check that all dependencies are installed: pip install -r requirements.txt")
-        print("3. Ensure base_cv.yaml exists in the current directory")
+        print("3. Ensure base_cv.yaml exists in the inputs/ directory")
         print(f"4. Error details: {str(e)}")
 
 
@@ -82,7 +83,7 @@ def test_cv_loading():
     print("="*70 + "\n")
     
     try:
-        cv = CVParser.load_cv("base_cv.yaml")
+        cv = CVParser.load_cv("inputs/base_cv.yaml")
         print("✓ Successfully loaded base CV")
         print(f"  Name: {cv['personal_info']['name']}")
         print(f"  Email: {cv['personal_info']['email']}")
@@ -113,7 +114,7 @@ def test_job_postings():
 if __name__ == "__main__":
     # Run tests first
     if not test_cv_loading():
-        print("\n⚠ CV loading test failed. Please check base_cv.yaml")
+        print("\n⚠ CV loading test failed. Please check inputs/base_cv.yaml")
     
     test_job_postings()
     
