@@ -53,18 +53,23 @@ def main():
     
     try:
         customized_cv = crew.customize_cv_for_job(job_posting)
-        
+
         print("-" * 70)
         print("\n4. Saving customized CV...")
-        output_path = crew.save_customized_cv(customized_cv)
-        
+        yaml_path = crew.save_customized_cv(customized_cv)
+
+        print("\n5. Generating DOCX resume...")
+        docx_path = crew.generate_docx(yaml_path)
+
         print("\n" + "="*70)
         print(" ✓ Workflow Complete!")
         print("="*70)
-        print(f"\nCustomized CV saved to: {output_path}")
+        print(f"\nOutputs generated:")
+        print(f"  YAML CV: {yaml_path}")
+        print(f"  DOCX Resume: {docx_path}")
         print("\nNext steps:")
         print("- Review the customized CV")
-        print("- Generate PDF version for submission")
+        print("- Submit the DOCX resume to job applications")
         print("- Test with different job postings")
         
     except Exception as e:

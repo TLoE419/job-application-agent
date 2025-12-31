@@ -17,9 +17,8 @@ config/.env
 Thumbs.db
 
 # Output files
-outputs/*.yaml
-outputs/*.pdf
-
+outputs
+outputs/*
 # Keep the outputs directory
 !outputs/.gitkeep
 

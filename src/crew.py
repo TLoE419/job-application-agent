@@ -12,16 +12,18 @@ from pathlib import Path
 class JobCVCrew:
     """Orchestrates the entire job CV customization workflow"""
 
-    def __init__(self, cv_path: str = "inputs/base_cv.yaml"):
+    def __init__(self, cv_path: str = "inputs/base_cv.yaml", template_path: str = "templates/template.docx"):
         """
-        Initialize the crew with a base CV
-        
+        Initialize the crew with a base CV and template
+
         Args:
             cv_path: Path to the base CV in YAML format
+            template_path: Path to the DOCX template file
         """
         self.cv_path = cv_path
+        self.template_path = template_path
         self.base_cv = self._load_cv()
-        
+
         # Create the crew with all agents and tasks
         self.crew = Crew(
             agents=[job_analyzer_agent, cv_matcher_agent, cv_customizer_agent],
@@ -118,11 +120,11 @@ class JobCVCrew:
     def save_customized_cv(self, customized_cv: str, output_path: str = None) -> str:
         """
         Save the customized CV to a YAML file
-        
+
         Args:
             customized_cv: The customized CV content
             output_path: Path to save the file (optional)
-            
+
         Returns:
             Path to the saved file
         """
@@ -130,12 +132,39 @@ class JobCVCrew:
             output_dir = Path("outputs")
             output_dir.mkdir(exist_ok=True)
             output_path = output_dir / "customized_cv.yaml"
-        
+
         with open(output_path, 'w') as file:
             file.write(customized_cv)
-        
+
         print(f"✓ Customized CV saved to {output_path}")
         return str(output_path)
+
+    def generate_docx(self, yaml_cv_path: str, output_docx_path: str = None) -> str:
+        """
+        Generate DOCX resume from YAML CV using template
+
+        Args:
+            yaml_cv_path: Path to the YAML CV file
+            output_docx_path: Path to save the DOCX file (optional)
+
+        Returns:
+            Path to the generated DOCX file
+        """
+        from docx_filler import DOCXFiller
+
+        if output_docx_path is None:
+            output_docx_path = yaml_cv_path.replace('.yaml', '.docx')
+
+        print(f"\n📄 Generating DOCX resume from template...")
+
+        # Load CV data
+        with open(yaml_cv_path, 'r') as f:
+            cv_data = yaml.safe_load(f)
+
+        # Fill template
+        result = DOCXFiller.fill_template(self.template_path, cv_data, output_docx_path)
+
+        return result
 
 
 # Example usage
