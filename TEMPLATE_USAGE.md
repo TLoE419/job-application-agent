@@ -52,7 +52,7 @@ Use `{{FIELD_NAME}}` format in your Word template:
 
 ## Usage
 
-### Full Workflow (CV Customization + DOCX Generation)
+### Full Workflow (CV Customization + DOCX + PDF Generation)
 
 ```bash
 python src/main.py
@@ -63,10 +63,12 @@ This will:
 2. Customize CV for the job
 3. Generate YAML file
 4. Generate DOCX resume from template
+5. Convert DOCX to PDF
 
 **Outputs:**
 - `outputs/customized_cv.yaml` - Customized CV data
-- `outputs/customized_cv.docx` - Final resume
+- `outputs/customized_cv.docx` - DOCX resume
+- `outputs/customized_cv.pdf` - PDF resume (ready to submit)
 
 ### Manual DOCX Generation
 

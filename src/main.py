@@ -61,15 +61,19 @@ def main():
         print("\n5. Generating DOCX resume...")
         docx_path = crew.generate_docx(yaml_path)
 
+        print("\n6. Converting to PDF...")
+        pdf_path = crew.generate_pdf(docx_path)
+
         print("\n" + "="*70)
         print(" ✓ Workflow Complete!")
         print("="*70)
         print(f"\nOutputs generated:")
         print(f"  YAML CV: {yaml_path}")
         print(f"  DOCX Resume: {docx_path}")
+        print(f"  PDF Resume: {pdf_path}")
         print("\nNext steps:")
         print("- Review the customized CV")
-        print("- Submit the DOCX resume to job applications")
+        print("- Submit the PDF resume to job applications")
         print("- Test with different job postings")
         
     except Exception as e:

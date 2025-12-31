@@ -9,3 +9,5 @@ beautifulsoup4>=4.12.3
 selenium>=4.18.1
 reportlab==4.0.7
 pydantic-settings==2.1.0
+python-docx>=0.8.11
+docx2pdf>=0.1.8

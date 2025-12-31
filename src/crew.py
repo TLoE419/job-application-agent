@@ -166,6 +166,33 @@ class JobCVCrew:
 
         return result
 
+    def generate_pdf(self, docx_path: str, output_pdf_path: str = None) -> str:
+        """
+        Convert DOCX resume to PDF
+
+        Args:
+            docx_path: Path to the DOCX file
+            output_pdf_path: Path to save the PDF file (optional)
+
+        Returns:
+            Path to the generated PDF file
+        """
+        from docx2pdf import convert
+
+        if output_pdf_path is None:
+            output_pdf_path = docx_path.replace('.docx', '.pdf')
+
+        print(f"\n📄 Converting DOCX to PDF...")
+
+        try:
+            convert(docx_path, output_pdf_path)
+            print(f"✓ PDF saved: {output_pdf_path}")
+            return output_pdf_path
+        except Exception as e:
+            print(f"✗ PDF generation failed: {e}")
+            print("Note: PDF conversion requires Microsoft Word to be installed on macOS")
+            raise
+
 
 # Example usage
 if __name__ == "__main__":
